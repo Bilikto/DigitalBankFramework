@@ -1,7 +1,7 @@
 Feature: Get all savings accounts
 
   @api
-  Scenario: Verify saving accounts
+  Scenario: Verify user saving accounts
     Given user is authenticated
     When user set up request for "/user/{id}/account/savings"
     And user set up "Authorization" header token

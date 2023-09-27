@@ -1,7 +1,7 @@
 Feature: Get all checking accounts
 
   @api
-  Scenario: Verify checking accounts
+  Scenario: Verify user checking accounts
     Given user is authenticated
     When user set up request for "/user/{id}/account/checking"
     And user set up "Authorization" header token
