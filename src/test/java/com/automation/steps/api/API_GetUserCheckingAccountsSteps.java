@@ -20,13 +20,15 @@ public class API_GetUserCheckingAccountsSteps {
         List<AccountResponsePojo> actualResponseList = RestAssuredUtils.getResponse().as(new TypeRef<>() {});
         System.out.println("Actual value " + actualResponseList.get(0).getId());
 
-        Assert.assertEquals("An id is not matching ", expectedCheckingAccList.get(0).get("id"), String.valueOf(actualResponseList.get(0).getId()));
-        Assert.assertEquals("The name is not matching ", expectedCheckingAccList.get(0).get("name"), actualResponseList.get(0).getName());
-        Assert.assertEquals("An account number is not matching ", expectedCheckingAccList.get(0).get("accountNumber"), String.valueOf(actualResponseList.get(0).getAccountNumber()));
-        Assert.assertEquals("A current balance is not matching ", Double.parseDouble(expectedCheckingAccList.get(0).get("currentBalance")), actualResponseList.get(0).getCurrentBalance(), .1);
-        Assert.assertEquals("An opening balance is not matching ", Double.parseDouble(expectedCheckingAccList.get(0).get("openingBalance")), actualResponseList.get(0).getOpeningBalance(), .1);
-        Assert.assertEquals("An interest rate is not matching ", Double.parseDouble(expectedCheckingAccList.get(0).get("interestRate")), actualResponseList.get(0).getInterestRate(), .1);
-        Assert.assertEquals("An opened date is not matching ", expectedCheckingAccList.get(0).get("dateOpened"), actualResponseList.get(0).getDateOpened());
+        for(int i = 0; i < expectedCheckingAccList.size(); i++) {
+                Assert.assertEquals("An id is not matching ", expectedCheckingAccList.get(i).get("id"), String.valueOf(actualResponseList.get(i).getId()));
+                Assert.assertEquals("The name is not matching ", expectedCheckingAccList.get(i).get("name"), actualResponseList.get(i).getName());
+                Assert.assertEquals("An account number is not matching ", expectedCheckingAccList.get(i).get("accountNumber"), String.valueOf(actualResponseList.get(i).getAccountNumber()));
+                Assert.assertEquals("A current balance is not matching ", Double.parseDouble(expectedCheckingAccList.get(i).get("currentBalance")), actualResponseList.get(i).getCurrentBalance(), .1);
+                Assert.assertEquals("An opening balance is not matching ", Double.parseDouble(expectedCheckingAccList.get(i).get("openingBalance")), actualResponseList.get(i).getOpeningBalance(), .1);
+                Assert.assertEquals("An interest rate is not matching ", Double.parseDouble(expectedCheckingAccList.get(i).get("interestRate")), actualResponseList.get(i).getInterestRate(), .1);
+                Assert.assertEquals("An opened date is not matching ", expectedCheckingAccList.get(i).get("dateOpened"), actualResponseList.get(i).getDateOpened());
+        }
     }
 
     @Then("verify the following should be the account type response payload")
@@ -40,7 +42,7 @@ public class API_GetUserCheckingAccountsSteps {
         Assert.assertEquals("An account type id is not matching ", Integer.parseInt(expectedResult.get(1).get(0)), actualResult.get(0).getAccountType().getId());
         Assert.assertEquals("An account type code is not matching ", expectedResult.get(1).get(1), actualResult.get(0).getAccountType().getCode());
         Assert.assertEquals("An account type category is not matching ", expectedResult.get(1).get(2), actualResult.get(0).getAccountType().getCategory());
-        Assert.assertEquals("An account type category is not matching ", expectedResult.get(1).get(3), actualResult.get(0).getAccountType().getName());
+        Assert.assertEquals("An account type name is not matching ", expectedResult.get(1).get(3), actualResult.get(0).getAccountType().getName());
         Assert.assertEquals("An account type interest rate is not matching ", Double.parseDouble(expectedResult.get(1).get(4)), actualResult.get(0).getAccountType().getInterestRate(), .1);
         Assert.assertEquals("An account type min deposit is not matching ", Double.parseDouble(expectedResult.get(1).get(5)), actualResult.get(0).getAccountType().getMinDeposit(), .1);
         Assert.assertEquals("An account type overdraft limit is not matching ", Double.parseDouble(expectedResult.get(1).get(6)), actualResult.get(0).getAccountType().getOverdraftLimit(), .1);

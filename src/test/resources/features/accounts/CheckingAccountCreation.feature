@@ -1,5 +1,6 @@
 Feature: A new checking account creation
 
+  @Regression
   Scenario: Validate user is able to create a new checking account
     Given user open website
     When user enter username and password

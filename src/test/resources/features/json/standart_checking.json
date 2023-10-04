@@ -1,0 +1,10 @@
+{
+"id": 8,
+"code": "SCK",
+"category": "CHK",
+"name": "Standard Checking",
+"interestRate": 0.0,
+"minDeposit": 25.00,
+"overdraftLimit": 25.00,
+"overdraftFee": 10.00
+}
