@@ -1,0 +1,33 @@
+{
+  "id": 6121,
+  "name": "Bill_Checking",
+  "accountNumber": 486131520,
+  "currentBalance": 60000.00,
+  "openingBalance": 60000.00,
+  "interestRate": 0.0,
+  "paymentAmount": 0.0,
+  "paymentTerm": 0,
+  "accountType": {
+    "id": 8,
+    "code": "SCK",
+    "category": "CHK",
+    "name": "Standard Checking",
+    "interestRate": 0.0,
+    "minDeposit": 25.00,
+    "overdraftLimit": 25.00,
+    "overdraftFee": 10.00
+  },
+  "ownershipType": {
+    "id": 17,
+    "code": "IND",
+    "name": "Individual"
+  },
+  "accountStanding": {
+    "id": 19,
+    "code": "A1",
+    "name": "Open"
+  },
+  "dateOpened": "2023-09-11T07:02",
+  "dateClosed": null,
+  "paymentDue": null
+}

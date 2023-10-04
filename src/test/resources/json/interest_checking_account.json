@@ -1,0 +1,33 @@
+{
+  "id": 6157,
+  "name": "Test Checking",
+  "accountNumber": 486131531,
+  "currentBalance": 50000.00,
+  "openingBalance": 50000.00,
+  "interestRate": 0.5,
+  "paymentAmount": 0.0,
+  "paymentTerm": 0,
+  "accountType": {
+    "id": 9,
+    "code": "ICK",
+    "category": "CHK",
+    "name": "Interest Checking",
+    "interestRate": 0.5,
+    "minDeposit": 25.00,
+    "overdraftLimit": 25.00,
+    "overdraftFee": 10.00
+  },
+  "ownershipType": {
+    "id": 18,
+    "code": "JNT",
+    "name": "Joint"
+  },
+  "accountStanding": {
+    "id": 19,
+    "code": "A1",
+    "name": "Open"
+  },
+  "dateOpened": "2023-09-12T03:22",
+  "dateClosed": null,
+  "paymentDue": null
+}
