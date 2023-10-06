@@ -1,4 +1,4 @@
-package com.automation.steps;
+package com.automation.stepdefs;
 
 import com.automation.pages.LoginPage;
 import io.cucumber.java.en.Given;

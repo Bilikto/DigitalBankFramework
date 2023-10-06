@@ -1,4 +1,4 @@
-package com.automation.pojo;
+package com.automation.pojos;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.automation.steps;
+package com.automation.stepdefs;
 
 import com.automation.pages.SavingsAccountPage;
 import io.cucumber.java.en.Then;

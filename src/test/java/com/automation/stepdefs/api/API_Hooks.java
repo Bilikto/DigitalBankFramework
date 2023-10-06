@@ -1,4 +1,4 @@
-package com.automation.steps.api;
+package com.automation.stepdefs.api;
 
 import com.automation.utils.ConfigFileReaderUtils;
 import io.cucumber.java.Before;
@@ -11,5 +11,10 @@ public class API_Hooks {
         ConfigFileReaderUtils.initConfig();
         RestAssured.baseURI = ConfigFileReaderUtils.getProperty("api.url");
     }
+
+//    @After("@api")
+//    public void cleanUp() {
+//
+//    }
 
 }

@@ -1,4 +1,4 @@
-package com.automation.steps;
+package com.automation.stepdefs;
 
 import com.automation.pages.LoginPage;
 import com.automation.pages.RegisterPage;

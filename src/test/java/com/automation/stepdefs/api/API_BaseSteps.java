@@ -1,4 +1,4 @@
-package com.automation.steps.api;
+package com.automation.stepdefs.api;
 
 import com.automation.utils.RestAssuredUtils;
 import io.cucumber.java.en.And;
