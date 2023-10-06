@@ -106,7 +106,6 @@ public class API_GetUserCheckingAccountsSteps {
     @Then("verify an account standing in response payload")
     public void verify_an_account_standing_in_response_payload() {
         for (AccountResponsePojo accountResponsePojo : actualCheckingAccountList) {
-            System.out.println(expectedCheckingAccountPojo.getAccountStanding().getId());
             Assert.assertEquals("An account standing id is not matching ", expectedCheckingAccountPojo.getAccountStanding().getId(), accountResponsePojo.getAccountStanding().getId());
             Assert.assertEquals("An account standing code is not matching ", expectedCheckingAccountPojo.getAccountStanding().getCode(), accountResponsePojo.getAccountStanding().getCode());
             Assert.assertEquals("An account standing name not matching ", expectedCheckingAccountPojo.getAccountStanding().getName(), accountResponsePojo.getAccountStanding().getName());
