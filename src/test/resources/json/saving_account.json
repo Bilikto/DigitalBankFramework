@@ -1,0 +1,33 @@
+{
+  "id": 7036,
+  "name": "Saving_account3",
+  "accountNumber": 486131815,
+  "currentBalance": 53000.00,
+  "openingBalance": 53000.00,
+  "interestRate": 1.85,
+  "paymentAmount": 0.0,
+  "paymentTerm": 0,
+  "accountType": {
+    "id": 10,
+    "code": "SAV",
+    "category": "SAV",
+    "name": "Savings",
+    "interestRate": 1.85,
+    "minDeposit": 25.00,
+    "overdraftLimit": 25.00,
+    "overdraftFee": 10.00
+  },
+  "ownershipType": {
+    "id": 17,
+    "code": "IND",
+    "name": "Individual"
+  },
+  "accountStanding": {
+    "id": 19,
+    "code": "A1",
+    "name": "Open"
+  },
+  "dateOpened": "2023-09-15T12:15",
+  "dateClosed": null,
+  "paymentDue": null
+}

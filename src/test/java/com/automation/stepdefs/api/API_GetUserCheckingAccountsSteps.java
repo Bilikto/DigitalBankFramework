@@ -66,7 +66,6 @@ public class API_GetUserCheckingAccountsSteps {
             String json = HelperUtils.readDataFromFile(jsonFolderPath+fileName);
             ObjectMapper om = new ObjectMapper();
             expectedCheckingAccountPojo = om.readValue(json, AccountRequestPojo.class);
-            actualCheckingAccountList = RestAssuredUtils.getResponse().as(new TypeRef<>() {});
 
             for (AccountResponsePojo accountResponsePojo : actualCheckingAccountList) {
                 if (!accountResponsePojo.getAccountType().getName().equals("Standard Checking") || !accountResponsePojo.getAccountType().getName().equals("Interest Checking")) {

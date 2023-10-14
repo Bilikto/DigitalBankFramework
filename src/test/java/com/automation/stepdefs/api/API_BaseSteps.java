@@ -40,5 +40,4 @@ public class API_BaseSteps {
         Assert.assertEquals("The status code is not matching", statusCode, RestAssuredUtils.getStatusCode());
     }
 
-
 }
