@@ -10,9 +10,21 @@ public class Hooks {
 
     @Before("@Regression")
     public void setUp() {
-        DriverUtils.createDriver();
         ConfigFileReaderUtils.initConfig();
         DatabaseUtils.initDatabase();
+        String env = ConfigFileReaderUtils.getProperty("run.env");
+
+        if(env.equalsIgnoreCase("local")) {
+            DriverUtils.createLocalDriver();
+        } else if(env.equalsIgnoreCase("remote")) {
+            String browser = ConfigFileReaderUtils.getProperty("run.browser");
+            String browserVersion = ConfigFileReaderUtils.getProperty("run.browserVersion");
+            String browserPlatform = ConfigFileReaderUtils.getProperty("run.platform");
+
+            DriverUtils.createRemoteDriver(browser, browserVersion, browserPlatform);
+        } else {
+            System.out.println("Provide run environment: local or remote");
+        }
     }
 
     @After("@Regression")

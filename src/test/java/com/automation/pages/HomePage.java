@@ -27,6 +27,7 @@ public class HomePage extends BasePage {
 
     @Override
     public void verifyPage() {
+        System.out.println("The Homepage title is " + dashboardTitle.getText());
         Assert.assertTrue("The Home page is not displayed", dashboardTitle.isDisplayed());
     }
 

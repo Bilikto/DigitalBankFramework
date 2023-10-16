@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src//test//resources/features"},
         glue = {"com.automation.stepdefs"},
-        tags = "@api"
+//        tags = "@api"
+//        tags = "@api and @Regression"
+        tags = "@Smoke"
 )
 public class RunnerClass {
 }
