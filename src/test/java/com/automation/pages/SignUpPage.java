@@ -86,13 +86,13 @@ public class SignUpPage extends BasePage {
         int generatedSSN = HelperUtils.generateRandomSSN(Integer.parseInt(ssnTxt));
         String formattedSSN = String.format("%09d", generatedSSN).replaceFirst("(\\d{3})(\\d{2})(\\d{4})", "$1-$2-$3");
         ssn.sendKeys(formattedSSN);
-        System.out.println(formattedSSN);
+        System.out.println("SSN " + formattedSSN);
 
         // Email
         String generatedEmail = emailTxt + generatedSSN + "@gmail.com";
         email.sendKeys(generatedEmail);
         Constant.inputDataOnUI.put("email", generatedEmail);
-        System.out.println(Constant.inputDataOnUI.get("email"));
+        System.out.println("Email " + Constant.inputDataOnUI.get("email"));
 
         // Password
         password.sendKeys(passwordTxt);

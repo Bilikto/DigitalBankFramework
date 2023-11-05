@@ -27,6 +27,7 @@ public class DriverUtils {
     // This method is used to run tests on AWS instances
     public static void createRemoteDriver(String browser, String browserVersion, String platform) {
         MutableCapabilities options = null;
+        String url = ConfigFileReaderUtils.getProperty("ec2.url");
 
         try {
             if(browser.equalsIgnoreCase("chrome")) {
@@ -42,7 +43,7 @@ public class DriverUtils {
             options.setCapability("browserName", browser);
             options.setCapability("browserVersion", browserVersion);
             options.setCapability("platformName", platform);
-            driver = new RemoteWebDriver(new URL("http://3.144.187.136:4444/wd/hub"), options);
+            driver = new RemoteWebDriver(new URL(url), options);
             driver.manage().deleteAllCookies();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));

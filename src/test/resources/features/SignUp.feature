@@ -1,6 +1,7 @@
 Feature: SignUp feature
 
   @Regression
+  @Smoke
   Scenario: Validate user is able to sign up
     Given user open website
     When user click on Sign Up here link

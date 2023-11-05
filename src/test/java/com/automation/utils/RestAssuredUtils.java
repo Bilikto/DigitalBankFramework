@@ -27,7 +27,7 @@ public class RestAssuredUtils {
     }
 
     public static void get() {
-        response = reqSpec.log().all().get(endpoint);
+        response = reqSpec.when().log().all().get(endpoint);
         response.then().log().all();
     }
 
