@@ -14,7 +14,7 @@ public class Hooks {
     public void setUp() {
         ConfigFileReaderUtils.initConfig();
         DatabaseUtils.initDatabase();
-        String env = ConfigFileReaderUtils.getProperty("run.env");
+        String env = ConfigFileReaderUtils.getProperty("test.level");
 
         if(env.equalsIgnoreCase("local")) {
             DriverUtils.createLocalDriver();

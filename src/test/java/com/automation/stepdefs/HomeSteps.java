@@ -33,4 +33,8 @@ public class HomeSteps {
         homePage.clickOnNewSavingsLink();
     }
 
+    @When("user select Withdraw menu")
+    public void user_select_withdraw_menu() {
+        homePage.selectWithdrawMenu();
+    }
 }

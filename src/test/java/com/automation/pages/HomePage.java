@@ -23,6 +23,9 @@ public class HomePage extends BasePage {
     @FindBy(id = "new-savings-menu-item")
     WebElement newSavingsLink;
 
+    @FindBy(xpath="//a[@id='withdraw-menu-item']")
+    WebElement withdrawMenuLink;
+
     /*************************************************************************************
      **************************************** METHODS ************************************
      ************************************************************************************/
@@ -52,6 +55,11 @@ public class HomePage extends BasePage {
     public void clickOnNewSavingsLink() {
         log.info("User is clicking on New Saving link");
         newSavingsLink.click();
+    }
+
+    public void selectWithdrawMenu() {
+        log.info("User is selecting Withdraw menu");
+        withdrawMenuLink.click();
     }
 
 }
