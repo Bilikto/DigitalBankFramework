@@ -15,5 +15,5 @@ Feature: Transaction validation
     And user enter withdraw amount
     And user click submit button
     Then verify an account transaction page is displayed
-    And verify transaction history is displayed for new transaction
+    And verify a new transaction is presented in transaction history
     And verify transaction is getting updated in database

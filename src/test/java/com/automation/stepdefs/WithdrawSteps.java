@@ -35,10 +35,9 @@ public class WithdrawSteps {
         transactionsPage.verifyPage();
     }
 
-    @Then("verify transaction history is displayed for new transaction")
-    public void verify_transaction_history_is_displayed_for_new_transaction() {
-        
-        
+    @Then("verify a new transaction is presented in transaction history")
+    public void verify_a_new_transaction_is_presented_in_transaction_history() {
+        transactionsPage.verifyTransaction();
     }
 
     @Then("verify transaction is getting updated in database")
