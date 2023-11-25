@@ -5,6 +5,7 @@ import com.automation.pages.RegisterPage;
 import com.automation.pages.SignUpPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lombok.extern.java.Log;
 
 public class SignUpSteps {
 

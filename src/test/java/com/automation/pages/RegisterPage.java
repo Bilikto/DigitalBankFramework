@@ -1,11 +1,13 @@
 package com.automation.pages;
 
 import com.automation.utils.ConfigFileReaderUtils;
+import lombok.extern.java.Log;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Log
 public class RegisterPage extends BasePage {
 
     @FindBy(id = "address")
@@ -44,11 +46,13 @@ public class RegisterPage extends BasePage {
 
     @Override
     public void verifyPage() {
+        log.info("Verifying the user is on Register page");
         Assert.assertTrue("The register page is not displayed", address.isDisplayed());
         Assert.assertTrue("The register page is not displayed", locality.isDisplayed());
     }
 
     public void userFillsOutInformationForRegistration() {
+        log.info("User is entering personal information for sign up");
         String addressTxt = ConfigFileReaderUtils.getProperty("signup.address");
         String localityTxt = ConfigFileReaderUtils.getProperty("signup.locality");
         String regionTxt = ConfigFileReaderUtils.getProperty("signup.region");
@@ -88,6 +92,7 @@ public class RegisterPage extends BasePage {
     }
 
     public void clickRegisterBtn() {
+        log.info("User is clicking on the Register page");
         registerBtn.click();
     }
 

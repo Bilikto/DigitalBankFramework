@@ -5,7 +5,9 @@ import com.automation.utils.DatabaseUtils;
 import com.automation.utils.DriverUtils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import lombok.extern.java.Log;
 
+@Log
 public class Hooks {
 
     @Before("@Regression")
@@ -20,10 +22,9 @@ public class Hooks {
             String browser = ConfigFileReaderUtils.getProperty("run.browser");
             String browserVersion = ConfigFileReaderUtils.getProperty("run.browserVersion");
             String browserPlatform = ConfigFileReaderUtils.getProperty("run.platform");
-
             DriverUtils.createRemoteDriver(browser, browserVersion, browserPlatform);
         } else {
-            System.out.println("Provide run environment: local or remote");
+            log.info("Provide run environment: local or remote");
         }
     }
 

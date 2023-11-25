@@ -47,7 +47,6 @@ public class DriverUtils {
             driver.manage().deleteAllCookies();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);

@@ -3,6 +3,7 @@ package com.automation.pages;
 import com.automation.utils.ConfigFileReaderUtils;
 import com.automation.utils.Constant;
 import com.automation.utils.HelperUtils;
+import lombok.extern.java.Log;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+@Log
 public class SignUpPage extends BasePage {
 
     @FindBy(id="title")
@@ -49,11 +51,13 @@ public class SignUpPage extends BasePage {
 
     @Override
     public void verifyPage() {
+        log.info("Verifying the user is on Sign up page");
         Assert.assertTrue("The Sign Up page is not displayed", firstName.isDisplayed());
         Assert.assertTrue("The Sign Up page is not displayed", lastName.isDisplayed());
     }
 
     public void userFillsOutInformationForSignUp() {
+        log.info("User is entering information for Sign up");
         String titleTxt = ConfigFileReaderUtils.getProperty("signup.title");
         String firstNameTxt = ConfigFileReaderUtils.getProperty("signup.firstName");
         String lastNameTxt = ConfigFileReaderUtils.getProperty("signup.lastName");
@@ -102,6 +106,7 @@ public class SignUpPage extends BasePage {
     }
 
     public void clickNextBtn() {
+        log.info("User is clicking next button");
         nextBtn.click();
     }
 
