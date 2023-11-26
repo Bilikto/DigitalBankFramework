@@ -108,7 +108,7 @@ public class SavingsAccountPage extends BasePage {
                 }
             }
 
-            String query = ConfigFileReaderUtils.getProperty("db.query") + "\'" + expectedAccNumberFromUI + "\'";
+            String query = ConfigFileReaderUtils.getProperty("db.account") + "\'" + expectedAccNumberFromUI + "\'";
             ResultSet res = DatabaseUtils.executeQuery(query);
             res.next();
             actualAccNumberFromDB = res.getString("account_number");

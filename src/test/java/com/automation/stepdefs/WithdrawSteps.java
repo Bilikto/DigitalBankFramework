@@ -42,8 +42,7 @@ public class WithdrawSteps {
 
     @Then("verify transaction is getting updated in database")
     public void verify_transaction_is_getting_updated_in_database() {
-        
-        
+        transactionsPage.verifyTransactionIsUpdatedInDatabase();
     }
 
 }
