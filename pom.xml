@@ -98,8 +98,13 @@
                     <version>3.0.0-M5</version>
                     <configuration>
                         <includes>
-                            <exclude>**/*Runner*</exclude>
+                            <include>**/*RegressionRunner*</include>
+                            <include>**/*APIRunner*</include>
                         </includes>
+<!--                        <excludes>-->
+<!--                            <exclude>**/SmokeRunner*</exclude>-->
+<!--                            <exclude>**/*Runner*</exclude>-->
+<!--                        </excludes>-->
                     </configuration>
                 </plugin>
             </plugins>

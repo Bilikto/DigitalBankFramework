@@ -6,9 +6,13 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredUtils {
 
-    private static RequestSpecification reqSpec = RestAssured.given();
+    private static RequestSpecification reqSpec;
     private static Response response;
     private static String endpoint;
+
+    public static void initializeRestAssured() {
+        reqSpec = RestAssured.given();
+    }
 
     public static void setEndpoint(String endpoint) {
         RestAssuredUtils.endpoint = endpoint;
@@ -24,6 +28,10 @@ public class RestAssuredUtils {
 
     public static void setHeader(String key, Object value) {
         reqSpec = reqSpec.header(key, value);
+    }
+
+    public static void setBody(Object body) {
+        reqSpec = reqSpec.body(body);
     }
 
     public static void get() {
@@ -56,6 +64,10 @@ public class RestAssuredUtils {
     public static String getAuthorizationToken() {
         System.out.println("Bearer " + response.jsonPath().getString("authToken"));
         return "Bearer " + response.jsonPath().getString("authToken");
+    }
+
+    public static void resetRestAssured() {
+        reqSpec = null;
     }
 
 }

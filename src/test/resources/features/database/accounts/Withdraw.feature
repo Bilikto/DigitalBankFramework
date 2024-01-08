@@ -1,7 +1,6 @@
 Feature: Transaction validation
 
   @Regression
-  @Smoke
   Scenario: Verify user can transfer the fund
     Given user open website
     When user enter username and password

@@ -1,11 +1,10 @@
-Feature: Get checking accounts
+Feature: Get all checking accounts
 
   @api
   Scenario: Verify user standard checking accounts
-    Given user is authenticated
-    When user set up request for "/user/{id}/account/checking"
-    And user set up "Authorization" header token
-    Then user set up a path parameter "id" as a 4356
+    Given user set up request for "/user/{id}/account/checking"
+    When user set up "Authorization" header token
+    And user set up a path parameter "id" as a 4356
     And user perform GET call
     Then verify status code is 200
     And verify the following should be in the standard checking accounts response payload
@@ -16,7 +15,7 @@ Feature: Get checking accounts
     | 6901 | Test_account1     | 486131772     | 85000.00       | 85000.00       | 0.0          | 2023-09-14T04:13 |
     | 6904 | Test_account2     | 486131773     | 85000.00       | 85000.00       | 0.0          | 2023-09-14T04:15 |
     | 6943 | Test_account      | 486131785     | 10000.00       | 10000.00       | 0.0          | 2023-09-14T06:49 |
-    | 7039 | Checking_account  | 486131816     | 44000.00       | 44000.00       | 0.0          | 2023-09-15T12:18 |
+    | 7039 | Checking_account  | 486131816     | 42096.00       | 44000.00       | 0.0          | 2023-09-15T12:18 |
     | 7577 | Checking_account  | 486131967     | 44000.00       | 44000.00       | 0.0          | 2023-09-20T01:54 |
     | 9583 | Checking_account  | 486132485     | 44000.00       | 44000.00       | 0.0          | 2023-09-27T04:52 |
     | 10583| Checking_account  | 486132670     | 44000.00       | 44000.00       | 0.0          | 2023-10-03T07:17 |
@@ -27,7 +26,10 @@ Feature: Get checking accounts
 
   @api
   Scenario: Verify user interest checking accounts
-    And user perform GET call
+    Given user set up request for "/user/{id}/account/checking"
+    When user set up "Authorization" header token
+    And user set up a path parameter "id" as a 4356
+    When user perform GET call
     Then verify status code is 200
     And verify the following should be in the interest checking accounts response payload
       | id   | name              | accountNumber | currentBalance | openingBalance | interestRate | dateOpened       |

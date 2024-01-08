@@ -9,11 +9,6 @@ import org.junit.Assert;
 
 public class API_BaseSteps {
 
-    @Given("user is authenticated")
-    public void user_is_authenticated() {
-        RestAssuredUtils.setAuthorizationToken();
-    }
-
     @When("user set up request for {string}")
     public void user_set_up_request_for(String endPoint) {
         RestAssuredUtils.setEndpoint(endPoint);
@@ -23,6 +18,11 @@ public class API_BaseSteps {
     public void user_set_up_header_token(String key) {
         String token = RestAssuredUtils.getAuthorizationToken();
         RestAssuredUtils.setHeader(key, token);
+    }
+
+    @When("user set up {string} header as {string}")
+    public void user_set_up_header_as(String header, String value) {
+        RestAssuredUtils.setHeader(header, value);
     }
 
     @And("user set up a path parameter {string} as a {int}")
