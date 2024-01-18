@@ -95,16 +95,21 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M5</version>
+                    <version>3.2.5</version>
                     <configuration>
                         <includes>
                             <include>**/*RegressionRunner*</include>
-                            <include>**/*APIRunner*</include>
+<!--                            <include>**/*APIRunner*</include>-->
                         </includes>
 <!--                        <excludes>-->
 <!--                            <exclude>**/SmokeRunner*</exclude>-->
 <!--                            <exclude>**/*Runner*</exclude>-->
 <!--                        </excludes>-->
+
+                        <parallel>methods</parallel>
+                        <useUnlimitedThreads>true</useUnlimitedThreads>
+<!--                        <threadCount>5</threadCount>-->
+
                     </configuration>
                 </plugin>
             </plugins>
