@@ -98,17 +98,15 @@
                     <version>3.2.5</version>
                     <configuration>
                         <includes>
+<!--                            <include>**/*Runner*</include>-->
                             <include>**/*RegressionRunner*</include>
 <!--                            <include>**/*APIRunner*</include>-->
+<!--                            <include>**/*DBRunner*</include>-->
                         </includes>
-<!--                        <excludes>-->
-<!--                            <exclude>**/SmokeRunner*</exclude>-->
-<!--                            <exclude>**/*Runner*</exclude>-->
-<!--                        </excludes>-->
-
                         <parallel>methods</parallel>
+<!--                        <parallel>classesAndMethods</parallel>  in case of multiple runners!!! -->
                         <useUnlimitedThreads>true</useUnlimitedThreads>
-<!--                        <threadCount>5</threadCount>-->
+<!--                        <threadCount>5</threadCount> To set the thread count to a specific number instead of useUnlimitedThreads -->
 
                     </configuration>
                 </plugin>

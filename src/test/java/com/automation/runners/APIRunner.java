@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src//test//resources/features/api/accounts"},
         glue = {"com.automation.stepdefs.api"},
-        tags = "@api"
+        tags = "@api",
+        monochrome=true
 )
 public class APIRunner {
 }

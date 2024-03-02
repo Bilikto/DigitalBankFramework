@@ -16,13 +16,13 @@ public class API_Hooks {
         RestAssured.baseURI = ConfigFileReaderUtils.getProperty("api.url");
         RestAssuredUtils.initializeRestAssured();
         RestAssuredUtils.setAuthorizationToken();
-        log.info("RequestSpecification is initialized");
+        log.info("API RequestSpecification is initialized");
     }
 
     @After("@api")
     public void cleanUp() {
         RestAssuredUtils.resetRestAssured();
-        log.info("RequestSpecification is set to null");
+        log.info("API RequestSpecification is set to null");
     }
 
 }

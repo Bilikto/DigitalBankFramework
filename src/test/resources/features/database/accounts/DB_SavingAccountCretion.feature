@@ -1,6 +1,6 @@
 Feature: A new saving account creation
 
-  @Regression
+  @Regression @db
   Scenario: Validate user is able to create a new saving account
     Given user open website
     When user enter username and password

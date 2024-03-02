@@ -49,10 +49,10 @@ public class TransactionsPage extends BasePage {
             String transactionNumberFormDB = rs.getString("transaction_number").trim();
             String transactionAmountFromDB = rs.getString("amount").replace("-", "").replace(".00", "");
 
-            System.out.println("transactionAmountFromUI " + transactionAmountFromUI);
-            System.out.println("transactionNumberFormUI " + transactionNumberFormUI);
-            System.out.println("transactionAmountFromDB " + transactionAmountFromDB);
-            System.out.println("transactionNumberFormDB " + transactionNumberFormDB);
+            System.out.println("Transaction Amount from UI " + transactionAmountFromUI);
+            System.out.println("Transaction Number from UI " + transactionNumberFormUI);
+            System.out.println("Transaction Amount from DB " + transactionAmountFromDB);
+            System.out.println("Transaction Number from DB " + transactionNumberFormDB);
 
             Assert.assertEquals("Transaction amount is not matching with a database data", transactionAmountFromUI, transactionAmountFromDB);
             Assert.assertEquals("Transaction number is not matching with a database data", transactionNumberFormUI, transactionNumberFormDB);

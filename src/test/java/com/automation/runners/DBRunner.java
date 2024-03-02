@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src//test//resources/features"},
+        features = {"src//test//resources/features/database/accounts"},
         glue = {"com.automation.stepdefs"},
-        tags = "@Regression",
+        tags = "@db",
         monochrome=true
 )
-public class RegressionRunner {
+public class DBRunner {
 }
